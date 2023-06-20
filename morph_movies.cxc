@@ -1,0 +1,45 @@
+close all
+
+open vol_000.mrc
+open vol_001.mrc
+open vol_002.mrc
+open vol_003.mrc
+open vol_004.mrc
+open vol_005.mrc
+open vol_006.mrc
+open vol_007.mrc
+open vol_008.mrc
+open vol_009.mrc
+hide all
+
+lighting soft 
+set bgColor white
+windowsize 960 1080
+
+#turn x 180
+movie record
+volume morph #1,2,3,4,5,6,7,8,9,10 playstep 0.01 frames 400  interpolateColors False  model #43
+color #43 #ffb2ffff models
+show #43
+
+hide atoms
+show cartoons
+
+
+wait 400
+
+hide all
+
+show #43
+
+lighting soft 
+set bgColor white
+
+hide atoms
+show cartoons
+
+wait 400 
+
+
+windowsize 960 1080
+movie encode pc1.mp4
